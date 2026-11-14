@@ -2,6 +2,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import connectDB from "./config/database.js";
 
 dotenv.config();
 
@@ -105,7 +106,20 @@ app.get("/api/jobs/test", async (req, res) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`CareerAI backend running at http://localhost:${PORT}`);
-});
+// Start server only after MongoDB connects
+const startServer = async () => {
+  try {
+    await connectDB();
+
+    app.listen(PORT, () => {
+      console.log(
+        `CareerAI backend running at http://localhost:${PORT}`
+      );
+    });
+  } catch (error) {
+    console.error("Failed to start CareerAI:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
