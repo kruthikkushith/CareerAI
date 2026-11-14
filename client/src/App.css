@@ -1,0 +1,278 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f8fc;
+  color: #172033;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.navbar {
+  height: 75px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #172033;
+}
+
+.logo span {
+  color: #6558e8;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4b5568;
+  font-size: 14px;
+}
+
+.login-btn,
+.search-box button {
+  background: #6558e8;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 95px 20px 85px;
+  background: linear-gradient(135deg, #eef0ff, #f8f7ff);
+}
+
+.eyebrow {
+  color: #6558e8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #6558e8;
+}
+
+.hero-description {
+  color: #697386;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.search-box {
+  display: flex;
+  max-width: 650px;
+  margin: auto;
+  padding: 8px;
+  gap: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px #252b4512;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.jobs-section {
+  padding: 65px 8%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+}
+
+.job-count {
+  color: #6558e8;
+  font-weight: 600;
+}
+
+.demo-warning {
+  background: #fff5d9;
+  color: #795600;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.job-card {
+  background: white;
+  border: 1px solid #e8eaf0;
+  padding: 25px;
+  border-radius: 13px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #252b4510;
+}
+
+.source {
+  display: inline-block;
+  color: #6558e8;
+  background: #f0efff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.job-card h3 {
+  font-size: 19px;
+  margin: 20px 0 10px;
+  line-height: 1.4;
+}
+
+.company {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.location {
+  color: #7b8494;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.apply-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #6558e8;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.message,
+.error-message {
+  padding: 20px 0;
+}
+
+.error-message {
+  color: #c0392b;
+}
+
+.about-section {
+  text-align: center;
+  padding: 65px 20px;
+  background: white;
+}
+
+.about-section h2 {
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  max-width: 650px;
+  margin: auto;
+  color: #697386;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 15px;
+  background: #172033;
+  color: white;
+}
+
+footer .logo {
+  color: white;
+  margin-bottom: 12px;
+}
+
+footer p {
+  color: #b5bdce;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 15px 5%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 65px 15px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input {
+    padding: 14px;
+  }
+
+  .jobs-section {
+    padding: 45px 5%;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+}
